@@ -24,14 +24,7 @@ jobs:
         with:
           version: 8
 
-      - name: Verificar existencia de pnpm-lock.yaml
-        run: |
-          if [ ! -f "api-client/pnpm-lock.yaml" ]; then
-            echo "El archivo pnpm-lock.yaml no existe. Ejecutando pnpm install..."
-            pnpm install
-          else
-            echo "El archivo pnpm-lock.yaml ya existe. No se ejecutará pnpm install."
-          fi
+     
       - name: Instalar Node.js
         uses: actions/setup-node@v3
         with:
