@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 19
           cache: pnpm
-          cache-dependency-path: api-client/pnpm-lock.yaml
+         
 
       # Se necesita Java para poder ejecutar OpenAPI Generator
       - uses: actions/setup-java@v3
