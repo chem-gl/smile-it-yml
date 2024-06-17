@@ -47,15 +47,12 @@ jobs:
         working-directory: api-client
 
       - name: Copiar especificación de OpenAPI
-        run: cp uam-registro-aspirantes.yaml api-client/api-docs.yaml
-
+        run: cp contrato-smile-it.yaml api-client/contrato-smile-it.yaml
+        
       - name: Generar código
         run: pnpx @openapitools/openapi-generator-cli@2.7.0 generate --generator-key api-client
         working-directory: api-client
 
-      - name: Eliminar especificación de OpenAPI
-        run: rm api-docs.yaml
-        working-directory: api-client
 
       - name: Instalar dependencias faltantes
         run: pnpm i -D tslib@2.6.2
