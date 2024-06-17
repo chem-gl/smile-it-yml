@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: chem-gl/smile-it-front-api
-          path: api-clien
+          path: api-client
           ssh-key: ${{ secrets.API_CLIENT_REPO_KEY }}
           persist-credentials: true
 
@@ -25,7 +25,7 @@ jobs:
           version: 8
       - name: Verificar y generar pnpm-lock.yaml si no existe
         run: |
-          cd api-clien
+          cd api-client
           if [ ! -f "pnpm-lock.yaml" ]; then
             echo "pnpm-lock.yaml no encontrado. Ejecutando pnpm install..."
             pnpm install
