@@ -16,7 +16,7 @@ jobs:
         with:
           repository: chem-gl/smile-it-front-api
           path: api-clien
-          ssh-key: ${{ secrets.API_CLIENT_REPO_KEYa }}
+          ssh-key: ${{ secrets.API_CLIENT_REPO_KEY }}
           persist-credentials: true
 
       - name: Instalar pnpm
