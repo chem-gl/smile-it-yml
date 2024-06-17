@@ -36,8 +36,7 @@ jobs:
         with:
           working-directory: api-client
           node-version: 19
-          path: api-clien
-          cache: pnpm
+
          
 
       # Se necesita Java para poder ejecutar OpenAPI Generator
