@@ -50,7 +50,7 @@ jobs:
         run: cp contrato-smile-it.yaml api-client/contrato-smile-it.yaml
         
       - name: Generar código
-        run: pnpx @openapitools/openapi-generator-cli@2.7.0 generate --generator-key api-client -i contrato-smile-it.yaml
+        run: pnpx @openapitools/openapi-generator-cli@2.7.0 generate --generator-key api-client -i contrato-smile-it.yaml -g typescript-rxjs
         working-directory: api-client
 
 
