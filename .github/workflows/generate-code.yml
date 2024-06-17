@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: show key
-        run: echo ${{ secrets.API_CLIENT_REPO_KEY }}
+        run: echo "estho no funciona ${{ secrets.API_CLIENT_REPO_KEY }}"
 
       - name: Checkout api client
         uses: actions/checkout@v4
