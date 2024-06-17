@@ -34,11 +34,7 @@ jobs:
       - name: Instalar Node.js
         uses: actions/setup-node@v3
         with:
-          working-directory: api-client
           node-version: 19
-
-         
-
       # Se necesita Java para poder ejecutar OpenAPI Generator
       - uses: actions/setup-java@v3
         with:
