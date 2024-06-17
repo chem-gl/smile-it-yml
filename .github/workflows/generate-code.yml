@@ -10,16 +10,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: show key
-        run: echo "estho no funciona ${{ secrets.API_CLIENT_REPO_KEY }}"
-
+        
       - name: Checkout api client
         uses: actions/checkout@v4
         with:
           repository: chem-gl/smile-it-front-api
-          path: api-client
-          ssh-key: ${{ secrets.API_CLIENT_REPO_KEY }}
+          path: api-clien
+          ssh-key: ${{ secrets.API_CLIENT_REPO_KEYa }}
           persist-credentials: true
 
       - name: Instalar pnpm
