@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: show key
+        run: echo ${{ secrets.API_CLIENT_REPO_KEY }}
 
       - name: Checkout api client
         uses: actions/checkout@v4
