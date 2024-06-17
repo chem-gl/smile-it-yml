@@ -18,17 +18,17 @@ jobs:
           path: api-clien
           ssh-key: ${{ secrets.API_CLIENT_REPO_KEY }}
           persist-credentials: true
+
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Verificar y generar pnpm-lock.yaml si no existe
         run: |
           if [ ! -f "pnpm-lock.yaml" ]; then
             echo "pnpm-lock.yaml no encontrado. Ejecutando pnpm install..."
             pnpm install
           fi
-      - name: Instalar pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
      
       - name: Instalar Node.js
         uses: actions/setup-node@v3
