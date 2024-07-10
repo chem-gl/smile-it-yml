@@ -27,15 +27,15 @@ jobs:
         run: |
           java -jar openapi-generator-cli.jar generate -i contrato-smile-it.yaml -g kotlin-spring -o spring-back
 
-      - name: Set up Maven settings
+      - name: Set up Gradle settings
         run: |
-          mkdir -p ~/.m2
-          echo "<settings><servers><server><id>your-repo-id</id><username>${{ secrets.MAVEN_USERNAME }}</username><password>${{ secrets.MAVEN_PASSWORD }}</password></server></servers></settings>" > ~/.m2/settings.xml
+          echo "USERNAME=${{ secrets.GITHUB_ACTOR }}" >> $GITHUB_ENV
+          echo "TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Publish Spring Boot API
         run: |
           cd spring-back
-          mvn deploy -DaltDeploymentRepository=your-repo-id::default::https://your.maven.repo/url
+          ./gradlew publish
 
       - name: Generate Angular Client
         run: |
