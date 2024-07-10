@@ -35,7 +35,7 @@ jobs:
       - name: Publish Spring Boot API
         run: |
           cd spring-back
-          mvn deploy
+          mvn deploy -DaltDeploymentRepository=your-repo-id::default::https://your.maven.repo/url
 
       - name: Generate Angular Client
         run: |
