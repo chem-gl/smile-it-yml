@@ -22,13 +22,10 @@ jobs:
       - name: Install OpenAPI Generator
         run: |
           wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.4.0/openapi-generator-cli-5.4.0.jar -O openapi-generator-cli.jar
-          alias openapi-generator-cli="java -jar $(pwd)/openapi-generator-cli.jar"
-          echo 'alias openapi-generator-cli="java -jar $(pwd)/openapi-generator-cli.jar"' >> ~/.bashrc
 
       - name: Generate Spring Boot API
         run: |
-          source ~/.bashrc
-          openapi-generator-cli generate -i contrato-smile-it.yaml -g kotlin-spring -o spring-back
+          java -jar openapi-generator-cli.jar generate -i contrato-smile-it.yaml -g kotlin-spring -o spring-back
 
       - name: Set up Maven settings
         run: |
@@ -42,8 +39,7 @@ jobs:
 
       - name: Generate Angular Client
         run: |
-          source ~/.bashrc
-          openapi-generator-cli generate -i contrato-smile-it.yaml -g typescript-angular -o angular-client
+          java -jar openapi-generator-cli.jar generate -i contrato-smile-it.yaml -g typescript-angular -o angular-client
 
       - name: Publish Angular Client to npm
         run: |
