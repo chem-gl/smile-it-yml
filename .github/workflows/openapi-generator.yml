@@ -32,10 +32,15 @@ jobs:
           echo "USERNAME=${{ secrets.GITHUB_ACTOR }}" >> $GITHUB_ENV
           echo "TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
+      - name: Install Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: "7.2" # Reemplaza con la versión de Gradle que necesitas
+
       - name: Publish Spring Boot API
         run: |
           cd spring-back
-          ./gradlew publish
+          gradle publish
 
       - name: Generate Angular Client
         run: |
